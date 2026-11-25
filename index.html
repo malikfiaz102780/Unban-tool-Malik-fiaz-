@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MALIK FIAZ — 𝑫𝑨𝑹𝑲 𝑯𝑨𝑪𝑲𝑬𝑹 ☠️ 🦋✨ | WhatsApp Unban Tool</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        cyber: {
+                            bg: '#05080f',
+                            card: '#0b111e',
+                            input: '#080d17',
+                            border: '#1a2742',
+                            whatsapp: '#25D366',
+                            whatsappDark: '#1ebe5d',
+                            neonGreen: '#00ff66',
+                            neonCyan: '#00f0ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Animated Multi-Color Neon Glowing Border Effect */
+        @keyframes gradientBorder {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .neon-border-wrapper {
+            position: relative;
+            border-radius: 1.25rem;
+            padding: 2px;
+            background: linear-gradient(60deg, #00ff66, #00f0ff, #7c3aed, #25D366, #00ff66);
+            background-size: 300% 300%;
+            animation: gradientBorder 6s ease infinite;
+        }
+
+        .neon-border-inner {
+            background: rgba(11, 17, 30, 0.94);
+            backdrop-filter: blur(16px);
+            border-radius: calc(1.25rem - 2px);
+        }
+
+        /* WhatsApp Green Glow */
+        .wa-glow {
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4), 0 0 40px rgba(37, 211, 102, 0.15);
+        }
+        .wa-glow:hover {
+            box-shadow: 0 0 28px rgba(37, 211, 102, 0.65), 0 0 55px rgba(37, 211, 102, 0.25);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #05080f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1a2742;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #25D366;
+        }
+
+        /* Ban Card Active State */
+        .ban-option-card.active {
+            border-color: #25D366;
+            background: rgba(37, 211, 102, 0.12);
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-cyber-bg text-slate-200 font-sans min-h-screen flex flex-col justify-between relative overflow-x-hidden selection:bg-cyber-whatsapp selection:text-cyber-bg">
+
+    <!-- Matrix Rain Background Canvas -->
+    <canvas id="matrixCanvas" class="fixed inset-0 w-full h-full pointer-events-none opacity-20 z-0"></canvas>
+
+    <!-- Radial Ambient Glows -->
+    <div class="fixed top-[-10%] left-[-10%] w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+    <!-- Custom Toast Notification Box (Replaces alert) -->
+    <div id="toastBox" class="fixed bottom-5 right-5 left-5 sm:left-auto z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex justify-center sm:justify-end">
+        <div class="bg-cyber-card border border-cyber-whatsapp text-white px-5 py-3.5 rounded-xl wa-glow flex items-center gap-3 max-w-md">
+            <i id="toastIcon" class="fas fa-check-circle text-cyber-whatsapp text-lg"></i>
+            <span id="toastMessage" class="text-sm font-semibold">Action completed!</span>
+        </div>
+    </div>
+
+    <!-- Sticky Top Navbar -->
+    <nav class="relative z-20 border-b border-cyber-border/80 bg-cyber-bg/85 backdrop-blur-md sticky top-0">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+                <span class="w-3 h-3 rounded-full bg-cyber-whatsapp animate-ping"></span>
+                <span class="font-extrabold text-sm sm:text-base tracking-wide text-white truncate">
+                    MALIK FIAZ — <span class="text-cyber-whatsapp">𝑫𝑨𝑹𝑲 𝑯𝑨𝑪𝑲𝑬𝑹</span> ☠️
+                </span>
+            </div>
+            <a href="https://whatsapp.com/channel/0029Vb77SHU9hXF2hfMyvR2c" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-cyber-whatsapp/15 hover:bg-cyber-whatsapp text-cyber-whatsapp hover:text-cyber-bg border border-cyber-whatsapp/50 font-bold text-xs sm:text-sm transition-all duration-200 shrink-0">
+                <i class="fab fa-whatsapp text-base"></i>
+                <span>Join Channel</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="relative z-10 flex-grow max-w-4xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-8">
+
+        <!-- 1. HEADER / WELCOME BANNER -->
+        <section class="neon-border-wrapper shadow-2xl">
+            <div class="neon-border-inner p-6 sm:p-8 space-y-6">
+                <!-- Brand Title -->
+                <div class="space-y-2 text-center sm:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyber-whatsapp/10 border border-cyber-whatsapp/30 text-cyber-whatsapp text-xs font-mono font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-cyber-whatsapp animate-pulse"></span>
+                        OFFICIAL TECH HUB & UNBAN PORTAL
+                    </div>
+                    <h1 class="text-2xl sm:text-4xl font-black text-white tracking-tight leading-tight">
+                        🟢 MALIK FIAZ — <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyber-whatsapp to-cyan-400">𝑫𝑨𝑹𝑲 𝑯𝑨𝑪𝑲𝑬𝑹 ☠️ 🦋✨</span>
+                    </h1>
+                    <p class="text-base sm:text-xl font-bold text-cyan-300 pt-1">
+                        🚀 Welcome to Malik Fiaz Dark Hacker!
+                    </p>
+                </div>
+
+                <!-- Intro & Feature List -->
+                <div class="bg-cyber-input/90 border border-cyber-border rounded-2xl p-5 sm:p-6 space-y-4">
+                    <p class="text-sm sm:text-base font-bold text-slate-200 tracking-wide">
+                        Yahan aapko milengi:
+                    </p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm sm:text-base text-slate-300 font-medium">
+                        <li class="flex items-center gap-2.5 bg-cyber-card/70 px-3.5 py-2.5 rounded-xl border border-cyber-border/60">
+                            <span>✅</span>
+                            <span>WhatsApp Number Unban Guides</span>
+                        </li>
+                        <li class="flex items-center gap-2.5 bg-cyber-card/70 px-3.5 py-2.5 rounded-xl border border-cyber-border/60">
+                            <span>✅</span>
+                            <span>WhatsApp Account Recovery Information</span>
+                        </li>
+                        <li class="flex items-center gap-2.5 bg-cyber-card/70 px-3.5 py-2.5 rounded-xl border border-cyber-border/60">
+                            <span>✅</span>
+                            <span>Step-by-Step Tutorials</span>
+                        </li>
+                        <li class="flex items-center gap-2.5 bg-cyber-card/70 px-3.5 py-2.5 rounded-xl border border-cyber-border/60">
+                            <span>✅</span>
+                            <span>Useful WhatsApp Tools</span>
+                        </li>
+                        <li class="flex items-center gap-2.5 bg-cyber-card/70 px-3.5 py-2.5 rounded-xl border border-cyber-border/60">
+                            <span>✅</span>
+                            <span>Tech Tips & Tricks</span>
+                        </li>
+                        <li class="flex items-center gap-2.5 bg-cyber-card/70 px-3.5 py-2.5 rounded-xl border border-cyber-border/60">
+                            <span>✅</span>
+                            <span>Cyber Security Knowledge</span>
+                        </li>
+                    </ul>
+
+                    <!-- Tagline -->
+                    <div class="pt-2 flex items-center justify-center sm:justify-start">
+                        <span class="inline-block px-4 py-1.5 rounded-lg bg-gradient-to-r from-emerald-500/15 to-cyan-500/15 border border-emerald-500/30 text-emerald-300 font-bold text-sm sm:text-base">
+                            📌 Learn • Fix • Grow
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Prominent WhatsApp Channel CTA Button -->
+                <div class="pt-1">
+                    <a href="https://whatsapp.com/channel/0029Vb77SHU9hXF2hfMyvR2c" target="_blank" rel="noopener noreferrer"
+                       class="w-full py-4 px-6 rounded-2xl bg-cyber-whatsapp hover:bg-cyber-whatsappDark text-cyber-bg font-black text-base sm:text-lg wa-glow transition-all duration-200 transform hover:-translate-y-0.5 flex items-center justify-center gap-3 text-center">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                        <span>🔗 Join Our WhatsApp Channel</span>
+                        <i class="fas fa-arrow-up-right-from-square text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. INTERACTIVE WHATSAPP UNBAN APPEAL GENERATOR TOOL -->
+        <section id="unbanToolSection" class="bg-cyber-card/90 backdrop-blur-md border border-cyber-border rounded-3xl p-6 sm:p-8 shadow-2xl space-y-7">
+            <!-- Tool Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-cyber-border pb-5">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2.5">
+                        <span>🛠️ Malik Fiaz Unban Tool</span>
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">
+                        Generate an official, policy-compliant WhatsApp review request tailored to your account ban.
+                    </p>
+                </div>
+                <span class="self-start sm:self-center text-xs font-mono px-3 py-1.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                    OFFICIAL APPEAL ENGINE
+                </span>
+            </div>
+
+            <!-- Form Inputs -->
+            <form id="unbanForm" class="space-y-6" onsubmit="event.preventDefault(); generateAppeal();">
+                
+                <!-- Phone Number with Country Code Selector -->
+                <div class="space-y-2.5">
+                    <label class="block text-sm font-bold text-slate-200">
+                        1. Enter Banned WhatsApp Number <span class="text-cyber-whatsapp">*</span>
+                    </label>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <!-- Country Code Dropdown -->
+                        <div class="sm:w-48 shrink-0">
+                            <select id="countryCode" onchange="toggleCustomCode()"
+                                class="w-full h-12 px-3.5 bg-cyber-input border border-cyber-border rounded-xl text-white font-mono text-sm focus:outline-none focus:border-cyber-whatsapp transition-colors cursor-pointer">
+                                <option value="+92" selected>🇵🇰 +92 (Pakistan)</option>
+                                <option value="+91">🇮🇳 +91 (India)</option>
+                                <option value="+1">🇺🇸 +1 (USA / Canada)</option>
+                                <option value="+44">🇬🇧 +44 (UK)</option>
+                                <option value="+971">🇦🇪 +971 (UAE)</option>
+                                <option value="+966">🇸🇦 +966 (Saudi Arabia)</option>
+                                <option value="custom">🌐 Custom Code</option>
+                            </select>
+                        </div>
+
+                        <!-- Custom Country Code Input (Hidden by default) -->
+                        <div id="customCodeWrapper" class="hidden sm:w-28 shrink-0">
+                            <input type="text" id="customCodeInput" placeholder="+93"
+                                class="w-full h-12 px-3.5 bg-cyber-input border border-cyber-border rounded-xl text-white font-mono text-sm placeholder-slate-500 focus:outline-none focus:border-cyber-whatsapp transition-colors">
+                        </div>
+
+                        <!-- Local Phone Number Input -->
+                        <div class="relative flex-grow">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                <i class="fab fa-whatsapp text-cyber-whatsapp text-lg"></i>
+                            </div>
+                            <input type="tel" id="phoneNumber" required placeholder="300 1234567"
+                                class="w-full h-12 pl-11 pr-4 bg-cyber-input border border-cyber-border rounded-xl text-white font-mono text-base placeholder-slate-500 focus:outline-none focus:border-cyber-whatsapp transition-colors">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ban Type Selector Cards -->
+                <div class="space-y-2.5">
+                    <label class="block text-sm font-bold text-slate-200">
+                        2. Select Your Ban / Restriction Category <span class="text-cyber-whatsapp">*</span>
+                    </label>
+                    <input type="hidden" id="selectedBanType" value="permanent">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        <!-- Card 1: Permanent Ban -->
+                        <button type="button" onclick="selectBanType('permanent', this)"
+                            class="ban-option-card active text-left p-4 rounded-2xl bg-cyber-input border border-cyber-border hover:border-cyber-whatsapp/60 transition-all cursor-pointer flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-rose-400 shrink-0 mt-0.5">
+                                <i class="fas fa-ban text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-white text-sm sm:text-base">Permanent Ban</div>
+                                <div class="text-xs text-slate-400 mt-0.5">Mistaken / False Flag ("This account is not allowed to use WhatsApp")</div>
+                            </div>
+                        </button>
+
+                        <!-- Card 2: Temporary Ban -->
+                        <button type="button" onclick="selectBanType('temporary', this)"
+                            class="ban-option-card text-left p-4 rounded-2xl bg-cyber-input border border-cyber-border hover:border-cyber-whatsapp/60 transition-all cursor-pointer flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
+                                <i class="fas fa-hourglass-half text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-white text-sm sm:text-base">Temporary Ban</div>
+                                <div class="text-xs text-slate-400 mt-0.5">Timer Restriction / Switched back from Unofficial App</div>
+                            </div>
+                        </button>
+
+                        <!-- Card 3: Spam / Bulk Messaging Flag -->
+                        <button type="button" onclick="selectBanType('spam', this)"
+                            class="ban-option-card text-left p-4 rounded-2xl bg-cyber-input border border-cyber-border hover:border-cyber-whatsapp/60 transition-all cursor-pointer flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 shrink-0 mt-0.5">
+                                <i class="fas fa-robot text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-white text-sm sm:text-base">Spam / Bulk Messaging Flag</div>
+                                <div class="text-xs text-slate-400 mt-0.5">Automated False Detection / Group or Business Activity</div>
+                            </div>
+                        </button>
+
+                        <!-- Card 4: Hacked / Compromised Account -->
+                        <button type="button" onclick="selectBanType('hacked', this)"
+                            class="ban-option-card text-left p-4 rounded-2xl bg-cyber-input border border-cyber-border hover:border-cyber-whatsapp/60 transition-all cursor-pointer flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0 mt-0.5">
+                                <i class="fas fa-user-shield text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-white text-sm sm:text-base">Hacked / Compromised Account</div>
+                                <div class="text-xs text-slate-400 mt-0.5">Unauthorized Access Caused Account Violation</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Optional User Name & Extra Details -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <label for="userName" class="block text-sm font-bold text-slate-200">
+                            3. Your Name <span class="text-xs font-normal text-slate-400">(Optional)</span>
+                        </label>
+                        <input type="text" id="userName" placeholder="e.g., Malik Fiaz"
+                            class="w-full h-12 px-4 bg-cyber-input border border-cyber-border rounded-xl text-white text-sm placeholder-slate-500 focus:outline-none focus:border-cyber-whatsapp transition-colors">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="extraDetails" class="block text-sm font-bold text-slate-200">
+                            4. Extra Context <span class="text-xs font-normal text-slate-400">(Optional)</span>
+                        </label>
+                        <input type="text" id="extraDetails" placeholder="e.g., Business account with important client chats"
+                            class="w-full h-12 px-4 bg-cyber-input border border-cyber-border rounded-xl text-white text-sm placeholder-slate-500 focus:outline-none focus:border-cyber-whatsapp transition-colors">
+                    </div>
+                </div>
+
+                <!-- Generate Appeal Submit Button -->
+                <button type="submit"
+                    class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 via-cyber-whatsapp to-teal-400 hover:brightness-110 text-cyber-bg font-black text-base sm:text-lg tracking-wide wa-glow transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer">
+                    <i class="fas fa-bolt"></i>
+                    <span>Generate Appeal</span>
+                </button>
+            </form>
+
+            <!-- OUTPUT AREA -->
+            <div id="outputContainer" class="pt-4 border-t border-cyber-border space-y-5">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-base sm:text-lg font-extrabold text-white flex items-center gap-2">
+                        <i class="fas fa-file-signature text-cyber-whatsapp"></i>
+                        <span>Ready-to-Send Support Appeal</span>
+                    </h3>
+                    <span id="statusBadge" class="text-xs font-mono px-2.5 py-1 rounded-lg bg-slate-800 text-slate-400 border border-cyber-border">
+                        Awaiting Number
+                    </span>
+                </div>
+
+                <!-- Official WhatsApp Support Email Row -->
+                <div class="space-y-1.5">
+                    <label class="text-xs font-mono uppercase tracking-wider text-slate-400">Official WhatsApp Support Email</label>
+                    <div class="flex items-center justify-between gap-2 bg-cyber-input border border-cyber-border rounded-xl px-4 py-3">
+                        <input type="text" id="supportEmailField" readonly value="support@support.whatsapp.com"
+                            class="w-full bg-transparent text-sm font-mono text-cyan-300 font-semibold focus:outline-none">
+                        <button type="button" onclick="copyField('supportEmailField', 'Support email copied!')"
+                            class="px-3 py-1.5 rounded-lg bg-cyber-card hover:bg-cyber-whatsapp text-slate-300 hover:text-cyber-bg border border-cyber-border text-xs font-bold transition-colors flex items-center gap-1.5 shrink-0 cursor-pointer">
+                            <i class="fas fa-copy"></i>
+                            <span>Copy</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Generated Email Subject Row -->
+                <div class="space-y-1.5">
+                    <label class="text-xs font-mono uppercase tracking-wider text-slate-400">Generated Email Subject</label>
+                    <div class="flex items-center justify-between gap-2 bg-cyber-input border border-cyber-border rounded-xl px-4 py-3">
+                        <input type="text" id="generatedSubject" readonly
+                            value="Request for Review: WhatsApp Account Restriction Appeal"
+                            class="w-full bg-transparent text-sm font-mono text-emerald-400 focus:outline-none">
+                        <button type="button" onclick="copyField('generatedSubject', 'Email subject copied!')"
+                            class="px-3 py-1.5 rounded-lg bg-cyber-card hover:bg-cyber-whatsapp text-slate-300 hover:text-cyber-bg border border-cyber-border text-xs font-bold transition-colors flex items-center gap-1.5 shrink-0 cursor-pointer">
+                            <i class="fas fa-copy"></i>
+                            <span>Copy</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Generated Appeal Message Body -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <label for="generatedBody" class="text-xs font-mono uppercase tracking-wider text-slate-400">Generated Appeal Message Body</label>
+                        <button type="button" onclick="copyField('generatedBody', 'Appeal message copied to clipboard!')"
+                            class="px-3 py-1 rounded-lg bg-cyber-whatsapp/15 hover:bg-cyber-whatsapp text-cyber-whatsapp hover:text-cyber-bg border border-cyber-whatsapp/40 text-xs font-bold transition-colors flex items-center gap-1.5 cursor-pointer">
+                            <i class="fas fa-copy"></i>
+                            <span>Copy Body</span>
+                        </button>
+                    </div>
+                    <textarea id="generatedBody" rows="9"
+                        class="w-full p-4 bg-cyber-input border border-cyber-border rounded-2xl text-sm font-mono text-slate-200 leading-relaxed focus:outline-none focus:border-cyber-whatsapp transition-colors resize-y"
+                        placeholder="Enter your phone number above and click 'Generate Appeal'..."></textarea>
+                </div>
+
+                <!-- Direct Action Buttons -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+                    <button type="button" onclick="copyField('generatedBody', 'Full appeal message copied!')"
+                        class="w-full py-3.5 px-5 rounded-xl bg-cyber-input hover:bg-slate-800 text-white font-bold text-sm border border-cyber-border hover:border-cyber-whatsapp transition-all flex items-center justify-center gap-2.5 cursor-pointer">
+                        <i class="fas fa-clipboard-check text-cyber-whatsapp text-base"></i>
+                        <span>Copy Appeal Message</span>
+                    </button>
+
+                    <a id="mailtoBtn" href="mailto:support@support.whatsapp.com" onclick="return checkBeforeMail()"
+                        class="w-full py-3.5 px-5 rounded-xl bg-cyber-whatsapp hover:bg-cyber-whatsappDark text-cyber-bg font-extrabold text-sm wa-glow transition-all flex items-center justify-center gap-2.5 cursor-pointer text-center">
+                        <span>📧 Send via Email App (Gmail / Mail)</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CHANNEL VERIFICATION / JOIN CARD & DISCLAIMER -->
+        <section class="space-y-6">
+            <!-- Join Channel Card -->
+            <div class="neon-border-wrapper shadow-xl">
+                <div class="neon-border-inner p-6 sm:p-8 text-center space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-cyber-whatsapp/15 border border-cyber-whatsapp/40 flex items-center justify-center mx-auto text-cyber-whatsapp wa-glow">
+                        <i class="fab fa-whatsapp text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-black text-white">
+                        Join Official <span class="text-cyber-whatsapp">𝑫𝑨𝑹𝑲 𝑯𝑨𝑪𝑲𝑬𝑹 ☠️ 🦋✨</span> Channel
+                    </h3>
+                    <p class="text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+                        Stay updated with working WhatsApp recovery guides, cybersecurity tutorials, and exclusive tools shared by <strong class="text-white">Malik Fiaz</strong>.
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://whatsapp.com/channel/0029Vb77SHU9hXF2hfMyvR2c" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-cyber-whatsapp hover:bg-cyber-whatsappDark text-cyber-bg font-black text-sm sm:text-base wa-glow transition-all duration-200 transform hover:-translate-y-0.5">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <span>🔗 Join WhatsApp Channel Now</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exact Disclaimer Box -->
+            <div class="bg-amber-500/10 border border-amber-500/35 rounded-2xl p-4 sm:p-5 flex items-start gap-3.5">
+                <div class="text-amber-400 text-lg mt-0.5 shrink-0">
+                    <i class="fas fa-triangle-exclamation"></i>
+                </div>
+                <p class="text-xs sm:text-sm text-amber-200/95 font-medium leading-relaxed">
+                    ⚠️ Note: Sirf educational purposes ke liye. WhatsApp unban ki guarantee nahi hai. Official appeal process use karein.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-cyber-border bg-cyber-bg/90 backdrop-blur-md py-6 px-4 text-center">
+        <div class="max-w-4xl mx-auto space-y-2">
+            <p class="text-sm font-bold text-slate-200">
+                Developed by <span class="text-cyber-whatsapp">Malik Fiaz</span> | <span class="text-cyan-300">𝑫𝑨𝑹𝑲 𝑯𝑨𝑪𝑲𝑬𝑹 ☠️ 🦋✨</span>
+            </p>
+            <p class="text-xs text-slate-500 font-mono">
+                📌 Learn • Fix • Grow — All Rights Reserved &copy; 2026
+            </p>
+        </div>
+    </footer>
+
+    <!-- Application JavaScript -->
+    <script>
+        /**
+         * Custom Toast Notification (No alert() used)
+         */
+        let toastTimer;
+        function showToast(message, isError = false) {
+            const toastBox = document.getElementById('toastBox');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastIcon = document.getElementById('toastIcon');
+
+            toastMessage.textContent = message;
+            toastIcon.className = isError
+                ? 'fas fa-circle-exclamation text-rose-400 text-lg'
+                : 'fas fa-circle-check text-cyber-whatsapp text-lg';
+
+            toastBox.classList.remove('translate-y-24', 'opacity-0');
+            toastBox.classList.add('translate-y-0', 'opacity-100');
+
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toastBox.classList.remove('translate-y-0', 'opacity-100');
+                toastBox.classList.add('translate-y-24', 'opacity-0');
+            }, 3200);
+        }
+
+        /**
+         * Toggles custom country code field when "Custom Code" is chosen
+         */
+        function toggleCustomCode() {
+            const select = document.getElementById('countryCode');
+            const customWrapper = document.getElementById('customCodeWrapper');
+            if (select.value === 'custom') {
+                customWrapper.classList.remove('hidden');
+                document.getElementById('customCodeInput').focus();
+            } else {
+                customWrapper.classList.add('hidden');
+            }
+        }
+
+        /**
+         * Handles visual active state of Ban Category Cards
+         */
+        function selectBanType(type, element) {
+            document.getElementById('selectedBanType').value = type;
+            document.querySelectorAll('.ban-option-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        /**
+         * Generates tailored English WhatsApp unban appeal email
+         */
+        function generateAppeal() {
+            const codeSelect = document.getElementById('countryCode').value;
+            const customCode = document.getElementById('customCodeInput').value.trim();
+            const rawPhone = document.getElementById('phoneNumber').value.trim();
+            const banType = document.getElementById('selectedBanType').value;
+            const userName = document.getElementById('userName').value.trim();
+            const extraDetails = document.getElementById('extraDetails').value.trim();
+
+            if (!rawPhone) {
+                showToast('Please enter your WhatsApp phone number first!', true);
+                document.getElementById('phoneNumber').focus();
+                return;
+            }
+
+            let prefix = codeSelect === 'custom' ? (customCode || '+') : codeSelect;
+            if (!prefix.startsWith('+')) prefix = '+' + prefix;
+
+            // Avoid duplicating country code if user typed it inside the phone field
+            const cleanPhone = rawPhone.startsWith('+') ? rawPhone : `${prefix} ${rawPhone}`;
+            const signOff = userName ? userName : 'Account Owner';
+            const extraNote = extraDetails ? `\nAdditional Context: ${extraDetails}\n` : '';
+
+            let subject = '';
+            let body = '';
+
+            switch (banType) {
+                case 'permanent':
+                    subject = `Appeal for Permanent Ban Review - ${cleanPhone}`;
+                    body = `Dear WhatsApp Support Team,
+
+I am writing to respectfully request a manual human review of the permanent restriction placed on my WhatsApp account associated with the phone number ${cleanPhone}.
+
+When trying to log in, I receive the message: "This account is not allowed to use WhatsApp." I strongly believe this ban was triggered mistakenly by an automated detection system. I use WhatsApp solely for legitimate communication with family, friends, and personal contacts, and I always strive to follow the WhatsApp Terms of Service.
+${extraNote}
+I kindly ask your team to inspect my account logs and restore access to my number (${cleanPhone}). If any unintentional issue occurred, I assure you that I will strictly adhere to all platform guidelines moving forward.
+
+Thank you very much for your time and assistance.
+
+Sincerely,
+${signOff}
+Phone Number: ${cleanPhone}`;
+                    break;
+
+                case 'temporary':
+                    subject = `Request to Lift Temporary Restriction - ${cleanPhone}`;
+                    body = `Dear WhatsApp Support Team,
+
+I am contacting you regarding a temporary restriction currently active on my WhatsApp account (${cleanPhone}).
+
+I have ensured that I am using only the official WhatsApp application downloaded from the official app store, and I have no intention of violating your Terms of Service. I rely on WhatsApp for essential daily communication and believe this restriction may have occurred due to an automated false flag.
+${extraNote}
+Please review my account status and lift the restriction on ${cleanPhone} as soon as possible. Thank you for your support and understanding.
+
+Best regards,
+${signOff}
+Phone Number: ${cleanPhone}`;
+                    break;
+
+                case 'spam':
+                    subject = `False Spam / Bulk Messaging Flag Review - ${cleanPhone}`;
+                    body = `Dear WhatsApp Support Team,
+
+I am requesting a manual review of my WhatsApp account (${cleanPhone}), which appears to have been restricted due to an automated spam or bulk-messaging flag.
+
+I would like to clarify that I do not send unsolicited messages, spam, or automated broadcasts. My account is used strictly for genuine conversations with people who know me personally and have my contact saved.
+${extraNote}
+I kindly request that you re-evaluate my account activity and reinstate access to ${cleanPhone}. Thank you for your prompt attention to this matter.
+
+Kind regards,
+${signOff}
+Phone Number: ${cleanPhone}`;
+                    break;
+
+                case 'hacked':
+                    subject = `Compromised / Hacked Account Restriction Review - ${cleanPhone}`;
+                    body = `Dear WhatsApp Support Team,
+
+I am writing to request urgent assistance with my WhatsApp account (${cleanPhone}), which was restricted after unauthorized third-party access / hijacking.
+
+I have now secured my SIM card, device, and verification PIN so that unauthorized individuals can no longer access my number. Any activity that triggered the ban was not performed by me.
+${extraNote}
+Please review my account security logs and restore access to ${cleanPhone} so I can safely use my official account again with Two-Step Verification enabled.
+
+Thank you very much for your help.
+
+Sincerely,
+${signOff}
+Phone Number: ${cleanPhone}`;
+                    break;
+            }
+
+            // Update UI fields
+            document.getElementById('generatedSubject').value = subject;
+            document.getElementById('generatedBody').value = body;
+
+            const statusBadge = document.getElementById('statusBadge');
+            statusBadge.textContent = 'Appeal Ready ✓';
+            statusBadge.className = 'text-xs font-mono px-2.5 py-1 rounded-lg bg-cyber-whatsapp/15 text-cyber-whatsapp border border-cyber-whatsapp/40 font-bold';
+
+            // Update mailto link
+            const mailtoHref = `mailto:support@support.whatsapp.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            document.getElementById('mailtoBtn').setAttribute('href', mailtoHref);
+
+            showToast('Unban appeal generated successfully!');
+        }
+
+        /**
+         * Validates that an appeal has been generated before launching email app
+         */
+        function checkBeforeMail() {
+            const badgeText = document.getElementById('statusBadge').textContent;
+            if (badgeText === 'Awaiting Number') {
+                showToast('Please enter your phone number and click "Generate Appeal" first!', true);
+                document.getElementById('phoneNumber').focus();
+                return false;
+            }
+            return true;
+        }
+
+        /**
+         * Copies text from input/textarea using document.execCommand('copy')
+         */
+        function copyField(elementId, successMsg) {
+            const el = document.getElementById(elementId);
+            if (!el || !el.value.trim()) {
+                showToast('Nothing to copy yet!', true);
+                return;
+            }
+
+            el.select();
+            el.setSelectionRange(0, 99999);
+
+            try {
+                const ok = document.execCommand('copy');
+                if (ok) {
+                    showToast(successMsg);
+                } else {
+                    showToast('Copy failed. Please select and copy manually.', true);
+                }
+            } catch (err) {
+                showToast('Copy failed. Please select and copy manually.', true);
+            }
+            window.getSelection().removeAllRanges();
+        }
+
+        /**
+         * Matrix Digital Rain Background Animation
+         */
+        window.onload = function () {
+            // Set initial preview message
+            document.getElementById('generatedBody').value =
+`Dear WhatsApp Support Team,
+
+Select your country code, enter your banned phone number above, choose your ban category, and click "Generate Appeal" to create a complete review request.
+
+Sincerely,
+Malik Fiaz — Dark Hacker Unban Tool`;
+
+            const canvas = document.getElementById('matrixCanvas');
+            const ctx = canvas.getContext('2d');
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+
+            const chars = '01MALIKFIAZDARKHACKERWHATSAPPUNBAN';
+            const charArray = chars.split('');
+            const fontSize = 14;
+            let columns = Math.floor(canvas.width / fontSize);
+            let drops = Array(columns).fill(1);
+
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+                columns = Math.floor(canvas.width / fontSize);
+                drops = Array(columns).fill(1);
+            });
+
+            function drawMatrix() {
+                ctx.fillStyle = 'rgba(5, 8, 15, 0.08)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = '#25D366';
+                ctx.font = fontSize + 'px JetBrains Mono, monospace';
+
+                for (let i = 0; i < drops.length; i++) {
+                    const text = charArray[Math.floor(Math.random() * charArray.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+
+            setInterval(drawMatrix, 55);
+        };
+    </script>
+</body>
+</html>
